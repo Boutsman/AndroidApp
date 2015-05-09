@@ -21,8 +21,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import android.annotation.SuppressLint;
 
 public class HandleJSON {
-    private JSONArray list;
-    //private String objectnr = "objectnr";
+    public JSONArray list;
+    private String objectnr = "objectnr";
     private String naam = "naam";
     private String beschrijving = "beschrijving";
     private String type = "type";
@@ -32,16 +32,14 @@ public class HandleJSON {
 
     public volatile boolean parsingComplete = true;
     public HandleJSON(String url){ this.urlString = url; }
-    public List<String> lijst = new ArrayList<String>();
 
-    //public String getObjectNr(){ return objectnr; }
+    public String getObjectNr(){ return objectnr; }
     public String getNaam(){ return naam; }
     public String getBeschrijving(){ return beschrijving; }
-    public String getType(){
-        return type;
-    }
+    public String getType(){ return type; }
     public String getAantal(){ return aantal; }
     public String getPrijs(){ return prijs; }
+    public JSONArray getList(){ return list; }
 
     @SuppressLint("NewApi")
     public void readAndParseJSON(String in) {
@@ -50,7 +48,7 @@ public class HandleJSON {
 
             for(int i=0;i<list.length();i++) {
                 JSONObject sys = list.getJSONObject(i);
-                //objectnr = sys.getString("id");
+                objectnr = sys.getString("id");
                 naam = sys.getString("naam");
                 beschrijving = sys.getString("beschrijving");
                 type = sys.getString("type");

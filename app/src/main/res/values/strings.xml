@@ -6,6 +6,9 @@
     <string name="button_send">Send</string>
     <string name="button_second">Show DB</string>
     <string name="button_third">Search item</string>
+    <string name="button_fourth">Edit item</string>
+
+    button_fourth
 
     <string name="button_refreshDb">Refresh DB</string>
 

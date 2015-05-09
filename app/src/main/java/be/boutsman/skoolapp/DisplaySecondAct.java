@@ -22,7 +22,7 @@ public class DisplaySecondAct extends ActionBarActivity {
     private String prijs = "prijs";
 
     private String url2 = "http://boutsman.be/AndroidApp/RESTInventaris.php?db";
-    private HandleJSONList heleDB;
+    private HandleJSON heleDB;
     private EditText textViewDb;
     private String[] jsonString;
     public JSONArray list;
@@ -34,7 +34,7 @@ public class DisplaySecondAct extends ActionBarActivity {
         textViewDb = (EditText) findViewById(R.id.textViewDb);
 
         String finalUrl = url2;
-        heleDB = new HandleJSONList(finalUrl);
+        heleDB = new HandleJSON(finalUrl);
         heleDB.fetchJSON();
 
         alleData();
@@ -65,7 +65,7 @@ public class DisplaySecondAct extends ActionBarActivity {
 
     public void alleData() {
         String finalUrl = url2;
-        heleDB = new HandleJSONList(finalUrl);
+        heleDB = new HandleJSON(finalUrl);
         heleDB.fetchJSON();
 
         while (heleDB.parsingComplete) ;
