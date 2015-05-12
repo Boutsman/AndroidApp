@@ -32,6 +32,11 @@
         </activity>
 
         <activity
+            android:name=".DisplayFourthAct"
+            android:label="@string/title_activity_display_fourth" >
+        </activity>
+
+        <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message" >
         </activity>
