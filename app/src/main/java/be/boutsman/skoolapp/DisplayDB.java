@@ -5,14 +5,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DisplaySecondAct extends ActionBarActivity {
+public class DisplayDB extends ActionBarActivity {
 
     private String objectnr = "objectnr";
     private String naam = "naam";
@@ -22,6 +21,7 @@ public class DisplaySecondAct extends ActionBarActivity {
     private String prijs = "prijs";
 
     private String url2 = "http://boutsman.be/AndroidApp/RESTInventaris.php?db";
+    private String urlDemo = "http://boutsman.be/AndroidApp/RESTInventaris.php?naam=test&beschrijving=test&type=test&aantal=10&prijs=22";
     private HandleJSON heleDB;
     private EditText textViewDb;
     private String[] jsonString;
@@ -30,7 +30,7 @@ public class DisplaySecondAct extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_second);
+        setContentView(R.layout.activity_display_db);
         textViewDb = (EditText) findViewById(R.id.textViewDb);
 
         String finalUrl = url2;
@@ -55,7 +55,7 @@ public class DisplaySecondAct extends ActionBarActivity {
                 alleData();
                 return true;
             case R.id.action_search:
-                Intent intent = new Intent(this, DisplayThirdAct.class);
+                Intent intent = new Intent(this, DisplayItem.class);
                 startActivity(intent);
                 return true;
             default:

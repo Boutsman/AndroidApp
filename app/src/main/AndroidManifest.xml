@@ -22,17 +22,17 @@
         </activity>
 
         <activity
-            android:name=".DisplaySecondAct"
+            android:name=".DisplayDB"
             android:label="@string/title_activity_display_second" >
         </activity>
 
         <activity
-            android:name=".DisplayThirdAct"
+            android:name=".DisplayItem"
             android:label="@string/title_activity_display_third" >
         </activity>
 
         <activity
-            android:name=".DisplayFourthAct"
+            android:name=".DisplaySubtraction"
             android:label="@string/title_activity_display_fourth" >
         </activity>
 

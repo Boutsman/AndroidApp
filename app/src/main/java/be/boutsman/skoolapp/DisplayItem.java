@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class DisplayThirdAct extends ActionBarActivity {
+public class DisplayItem extends ActionBarActivity {
 
     private String url1 = "http://boutsman.be/AndroidApp/RESTInventaris.php?id=";
     private String url2 = "http://boutsman.be/AndroidApp/RESTInventaris.php?db";
@@ -18,7 +18,7 @@ public class DisplayThirdAct extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_third);
+        setContentView(R.layout.activity_display_item);
         objectnr = (EditText)findViewById(R.id.editText1);
         naam = (EditText)findViewById(R.id.editText2);
         beschrijving = (EditText)findViewById(R.id.editText3);

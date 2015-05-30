@@ -50,17 +50,17 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void secondActivity(View view){
-        Intent intent = new Intent(this, DisplaySecondAct.class);
+        Intent intent = new Intent(this, DisplayDB.class);
         startActivity(intent);
     }
 
     public void thirdActivity(View view){
-        Intent intent = new Intent(this, DisplayThirdAct.class);
+        Intent intent = new Intent(this, DisplayItem.class);
         startActivity(intent);
     }
 
     public void fourthActivity(View view){
-        Intent intent = new Intent(this, DisplayFourthAct.class);
+        Intent intent = new Intent(this, DisplaySubtraction.class);
         startActivity(intent);
     }
 }
