@@ -42,6 +42,11 @@
         </activity>
 
         <activity
+            android:name=".EditItem"
+            android:label="@string/title_activity_display_sixth" >
+        </activity>
+
+        <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message" >
         </activity>

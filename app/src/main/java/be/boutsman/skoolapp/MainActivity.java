@@ -64,6 +64,11 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void fifthActivity(View view){
+        Intent intent = new Intent(this, EditItem.class);
+        startActivity(intent);
+    }
+
     public void sixthActivity(View view){
         Intent intent = new Intent(this, AddItem.class);
         startActivity(intent);
