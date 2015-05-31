@@ -81,8 +81,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:text="@string/button_fourth"
-        android:onClick="thirdActivity"
+        android:text="@string/button_sixth"
+        android:onClick="sixthActivity"
         android:layout_weight="1"
         android:layout_centerHorizontal="true"
         android:layout_column="1"

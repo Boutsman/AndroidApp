@@ -124,7 +124,7 @@ tools:context="be.boutsman.skoolapp.DisplayItem" >
     android:layout_height="wrap_content"
     android:layout_alignBaseline="@+id/textView6"
     android:layout_alignBottom="@+id/textView6"
-    android:layout_alignRight="@+id/editText5"
+    android:layout_alignRight="@+id/editText4"
     android:ems="10" />
 
 <Button

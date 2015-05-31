@@ -8,6 +8,7 @@
     <string name="button_third">Search item</string>
     <string name="button_fourth">Subtract</string>
     <string name="button_fifth">Edit</string>
+    <string name="button_sixth">AddItem</string>
 
     <string name="edit_username">Username</string>
     <string name="edit_pw">Password</string>
@@ -22,4 +23,5 @@
     <string name="title_activity_display_third">OpenDB</string>
     <string name="title_activity_display_fourth">Subtract Amount</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="title_activity_display_fifth">AddItem</string>
 </resources>

@@ -23,7 +23,7 @@ import org.apache.http.protocol.HttpContext;
 public class DisplaySubtraction extends ActionBarActivity {
     private String url1Part1 = "http://boutsman.be/AndroidApp/RESTInventaris.php?id=";
     private String url1Part2 = "&aantal=";
-    private String urlDemo = "http://boutsman.be/AndroidApp/RESTInventaris.php?naam=test&beschrijving=test&type=test&aantal=10&prijs=22";
+    private String urlDemo = "http://boutsman.be/AndroidApp/RESTInventaris.php?naam=test&beschrijving=test&type=test&aantal=321&prijs=123";
     private String urlString;
     private EditText objectnr,aantal;
     private HandleJSON heleDB;
@@ -32,13 +32,6 @@ public class DisplaySubtraction extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_subtraction);
-
-        Button executeBtn = (Button)findViewById(R.id.button1);
-        executeBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                doInBackground();
-            }
-        });
     }
 
     @Override
@@ -60,16 +53,6 @@ public class DisplaySubtraction extends ActionBarActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    }
-
-    protected void doInBackground() {
-        HttpClient httpClient = new DefaultHttpClient();
-        HttpContext localContext = new BasicHttpContext();
-        HttpGet httpGet = new HttpGet(urlDemo);
-        try {
-            httpClient.execute(httpGet, localContext);
-        } catch (Exception e) {
         }
     }
 

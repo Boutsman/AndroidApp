@@ -22,12 +22,14 @@ import android.annotation.SuppressLint;
 
 public class HandleJSON {
     public JSONArray list;
+    public JSONObject JSONObj;
     private String objectnr = "objectnr";
     private String naam = "naam";
     private String beschrijving = "beschrijving";
     private String type = "type";
     private String aantal = "aantal";
     private String prijs = "prijs";
+    private String queryString = "queryString";
     private String urlString = null;
 
     public volatile boolean parsingComplete = true;
@@ -39,7 +41,9 @@ public class HandleJSON {
     public String getType(){ return type; }
     public String getAantal(){ return aantal; }
     public String getPrijs(){ return prijs; }
+    public String getQueryString(){ return queryString;}
     public JSONArray getList(){ return list; }
+    public JSONObject getJSONObj(){ return JSONObj; }
 
     @SuppressLint("NewApi")
     public void readAndParseJSON(String in) {
@@ -64,6 +68,22 @@ public class HandleJSON {
         }
 
     }
+
+    @SuppressLint("NewApi")
+    public void readAndParseJSONAfterAddItem(String in) {
+        try {
+            JSONObj  = new JSONObject(in);
+            //queryString = "ok";//JSONObj.getString("queryString");
+
+            parsingComplete = false;
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
     public void fetchJSON(){
         Thread thread = new Thread(new Runnable(){
             @Override
@@ -92,6 +112,36 @@ public class HandleJSON {
 
         thread.start();
     }
+
+    public void fetchJSONaddItem(){
+        Thread thread = new Thread(new Runnable(){
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL(urlString);
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setReadTimeout(10000 /* milliseconds */);
+                    conn.setConnectTimeout(15000 /* milliseconds */);
+                    conn.setRequestMethod("GET");
+                    conn.setDoInput(true);
+                    // Starts the query
+                    conn.connect();
+                    InputStream stream = conn.getInputStream();
+
+                    String data = convertStreamToString(stream);
+
+                    readAndParseJSONAfterAddItem(data);
+                    stream.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+    }
+
     static String convertStreamToString(java.io.InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
