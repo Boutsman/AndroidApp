@@ -21,17 +21,19 @@ import org.apache.http.protocol.HttpContext;
  * Created by Boutsman on 9/05/2015.
  */
 public class DisplaySubtraction extends ActionBarActivity {
-    private String url1Part1 = "http://boutsman.be/AndroidApp/RESTInventaris.php?id=";
-    private String url1Part2 = "&aantal=";
-    private String urlDemo = "http://boutsman.be/AndroidApp/RESTInventaris.php?naam=test&beschrijving=test&type=test&aantal=321&prijs=123";
+    private String url1 = "http://boutsman.be/AndroidApp/RESTInventaris.php?id=";
     private String urlString;
-    private EditText objectnr,aantal;
-    private HandleJSON heleDB;
+    private String amount;
+    private EditText objectnr,aantal, result;
+    private HandleJSON obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_subtraction);
+        objectnr = (EditText)findViewById(R.id.editText1);
+        aantal = (EditText)findViewById(R.id.editText2);
+        result = (EditText)findViewById(R.id.editText3);
     }
 
     @Override
@@ -57,16 +59,23 @@ public class DisplaySubtraction extends ActionBarActivity {
     }
 
     public void subtractAmount(View view){
-        HttpClient httpClient = new DefaultHttpClient();
+        String urlnr = objectnr.getText().toString();
+        int hoeveel = Integer.parseInt(aantal.getText().toString());
+        String finalUrl = url1 + urlnr;
+        obj = new HandleJSON(finalUrl);
+        obj.fetchJSON();
 
-        //Prepare a request object
-        HttpGet httpget = new HttpGet(urlDemo);
+        while (obj.parsingComplete);
+        int tempAantal = Integer.parseInt(obj.getAantal());
+        int nieuwAantal = tempAantal - hoeveel;
+        String tekstAantal = String.valueOf(nieuwAantal);
 
-        //Execute the request
-        HttpResponse response;
-        try{
-            httpClient.execute(httpget);
-        }
-        catch (Exception e) {}
+        String newUrl = url1 + urlnr + "&aantal=" + tekstAantal;
+
+        HandleJSON feedback = new HandleJSON(newUrl);
+        feedback.fetchJSON();
+
+        while (feedback.parsingComplete)
+        result.setText("Amount left= " + tekstAantal);
     }
 }
