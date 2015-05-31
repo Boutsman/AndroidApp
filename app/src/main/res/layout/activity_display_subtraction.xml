@@ -7,7 +7,7 @@ android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
 android:columnCount="3"
-android:rowCount="3"
+android:rowCount="4"
 tools:context="be.boutsman.skoolapp.DisplaySubtraction" >
 
 <TextView
@@ -57,8 +57,7 @@ tools:context="be.boutsman.skoolapp.DisplaySubtraction" >
     android:ems="10"
     android:layout_column="1"
     android:layout_row="1"
-    android:layout_columnSpan="2">
-</EditText>
+    android:layout_columnSpan="2"/>
 
 <Button
     android:id="@+id/button1"
@@ -66,10 +65,24 @@ tools:context="be.boutsman.skoolapp.DisplaySubtraction" >
     android:layout_height="wrap_content"
     android:layout_alignLeft="@+id/editText1"
     android:layout_below="@+id/editText2"
-    android:text="subtractAmount"
+    android:text="Subtract"
+    android:onClick="subtractAmount"
     android:layout_column="1"
     android:layout_row="2"
     android:layout_columnSpan="2"
     />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_below="@+id/button1"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/editText1"
+        android:ems="10"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:layout_columnSpan="3"/>
 
 </GridLayout>

@@ -134,6 +134,6 @@ tools:context="be.boutsman.skoolapp.DisplayItem" >
     android:layout_alignLeft="@+id/editText1"
     android:layout_below="@+id/editText1"
     android:onClick="open"
-    android:text="test" />
+    android:text="Search" />
 
 </RelativeLayout>
