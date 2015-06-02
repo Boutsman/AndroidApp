@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class DisplayItem extends ActionBarActivity {
 
     private String url1 = "http://boutsman.be/AndroidApp/RESTInventaris.php?id=";
-    private String url2 = "http://boutsman.be/AndroidApp/RESTInventaris.php?db";
+    private String url2 = "http://boutsman.be/AndroidApp/RESTInventaris.php?db&id=";
     private EditText objectnr,naam,beschrijving,type,aantal,prijs;
     private HandleJSON obj;
 
@@ -62,5 +62,19 @@ public class DisplayItem extends ActionBarActivity {
         type.setText(obj.getType());
         aantal.setText(obj.getAantal());
         prijs.setText(obj.getPrijs());
+    }
+
+    public void del(View view){
+        String url = objectnr.getText().toString();
+        String finalUrl = url2 + url;
+        obj = new HandleJSON(finalUrl);
+        obj.fetchJSON();
+
+        while (obj.parsingComplete);
+        naam.setText("0");
+        beschrijving.setText("0");
+        type.setText("0");
+        aantal.setText("0");
+        prijs.setText("0");
     }
 }

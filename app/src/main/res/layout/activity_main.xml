@@ -89,15 +89,6 @@
         android:layout_row="2"
         android:layout_gravity="fill_horizontal"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="@string/button_seventh"
-        android:onClick="thirdActivity"
-        android:layout_weight="1"
-        android:layout_centerHorizontal="true"
-        android:layout_column="2"
-        android:layout_row="2"
-        android:layout_gravity="fill_horizontal"/>
+
 
 </GridLayout>

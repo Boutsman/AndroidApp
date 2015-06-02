@@ -136,4 +136,13 @@ tools:context="be.boutsman.skoolapp.DisplayItem" >
     android:onClick="open"
     android:text="Search" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText6"
+        android:layout_below="@+id/editText6"
+        android:onClick="del"
+        android:text="Delete" />
+
 </RelativeLayout>
